@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pigeon</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+    <link href="./images/pigeon.jpeg" rel="icon" type="image/x-icon" />
+
+
+
+</head>
+
+<body>
+    <main>
+        <nav class="navbar navbar-dark userColor" id="settingsNav" aria-label="First navbar example">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="main.html">
+                    <img src="./images/p1.png" alt="" width="50" height="50" class="d-inline-block align-text-center">
+                    Pigeon
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample01">
+                    <ul class="navbar-nav me-auto mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="settings.html">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Sign out</a>
+                        </li>
+
+                    </ul>
+                    <form>
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </main>
+    <div id="dashboard">
+        <section class="todosBox container-fluid justify-content-center">
+            <h1 class="dashboard-header"><b>Dashboard</b></h1>
+            <p>Welcome back, <span id="name-goes-here"></span>!</p>
+            <div class="thumbnail col-xs-6 col-xs-offset">
+                <div class="todo-inputBox input-group">
+                    <input type="text" id="todo-input" class="form-control" placeholder="NEW TASK" minlength="1"
+                        maxlength="30" />
+                    <span class="input-group-addon btn btn-primary" id="submit-button" type="button"> ADD </span>
+                </div>
+                <div class="show-list">
+                    <ui id="todos" class="list-group">
+                    </ui>
+                </div>
+                <div class="text-right">
+                    <button id="removeAllChecked" class="btn btn-outline-warning float-end">
+                        Remove Checked
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                    <button id="removeAll" class="btn btn-outline-danger float-end">
+                        Remove All
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="calendar-container">
+        <div class="title userColor">
+            <ul>
+                <li id="prev">&#10094;</li>
+                <li id="next">&#10095;</li>
+                <li id="calendar-month">Month</li>
+                <li id="calendar-year">Year</li>
+            </ul>
+        </div>
+
+        <div class="calendar-body">
+            <ul class="weekdays">
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+                <li>Sun</li>
+            </ul>
+
+            <ul id="days">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="calendar-events">
+                <p id="days_msg"> </p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Bootstrap FirebaseUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+    <!-- Bootstarp script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebaseBBY07.js"></script>
+
+    <!-- Optional styles and scripts of your own -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" rel="stylesheet" href="styles/my-style.css">
+    <link type="text/css" rel="stylesheet" href="styles/calendar.css">
+    <link href="images/pigeon.jpeg" rel="icon" type="image/x-icon" />
+    <script src="./scripts/my-script.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script>
+        function insertName() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    // Do something for the current logged-in user here: 
+                    console.log(user.uid);
+                    //go to the correct user document by referencing to the user uid
+                    currentUser = db.collection("users").doc(user.uid);
+                    //get the document for current user.
+                    currentUser.get()
+                        .then(userDoc => {
+                            var user_Name = userDoc.data().name;
+                            console.log(user_Name);
+                            //method #1:  insert with html only
+                            document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
+                            //method #2:  insert using jquery
+                            //$("#name-goes-here").text(user_Name); //using jquery
+                        })
+                } else {
+                    // No user is signed in.
+                }
+            });
+        }
+        insertName();
+    </script>
+</body>
+
+</html>

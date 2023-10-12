@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+body{
+  background: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: large;
+}
+ 
+/* The color */
+.userColor{
+  background-color: #fe954a;
+}
+
+
+.todo-inputBox {
+  margin: 15px 0;
+}
+
+.list-group {
+  overflow-y: scroll;
+  height: 200px;
+}
+
+#dashboard {
+  width: 100%;
+  margin-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 500px;
+}
+
+/* This is the to do dashboard */
+.todosBox {
+  font-family: 'lato', sans-serif;
+  background-color: #eee;
+  border-radius: 20px;
+  padding-top: 3%;
+  padding-bottom: 15%;
+}
+
+.dashboard-header {
+  margin-bottom: 3%;
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+/* Add button */
+#submit-button {
+  cursor: pointer;
+  padding-top: 1%;
+}
+
+/* reminder delete */
+.delete {
+  cursor: pointer; 
+  float: right;
+  margin-left: 2%;
+}
+
+/* reminder edit */
+.edit {
+  cursor: pointer; 
+  float: right;
+}
+
+/* This is the styling for Remove all and remove checked button*/
+.text-right {
+  margin-top: 3%;
+}
+
+#removeAllChecked {
+  margin-left: 1%;
+}
+
+
+@media screen and (min-width: 1280px) {
+  #dashboard {
+    float: left;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 59%;
+  }
+
+}
+
